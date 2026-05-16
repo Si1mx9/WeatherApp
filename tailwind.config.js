@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -43,6 +44,11 @@ export default {
           800: '#854d0e',
           900: '#713f12',
         },
+        theme: {
+          text: 'var(--color-text)',
+          secondary: 'var(--color-text-secondary)',
+          card: 'var(--color-card)',
+        },
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -59,41 +65,16 @@ export default {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'bounce-slow': 'bounce 2s infinite',
         'spin-slow': 'spin 3s linear infinite',
-        'slide-up': 'slideUp 0.5s ease-out',
-        'slide-down': 'slideDown 0.5s ease-out',
-        'scale-in': 'scaleIn 0.5s ease-out',
         'shimmer': 'shimmer 2s linear infinite',
-        'glow': 'glow 2s ease-in-out infinite',
-        'glow-red': 'glowRed 2s ease-in-out infinite',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
         },
-        slideUp: {
-          '0%': { transform: 'translateY(100px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
-        slideDown: {
-          '0%': { transform: 'translateY(-100px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
-        scaleIn: {
-          '0%': { transform: 'scale(0.8)', opacity: '0' },
-          '100%': { transform: 'scale(1)', opacity: '1' },
-        },
         shimmer: {
           '0%': { backgroundPosition: '-1000px 0' },
           '100%': { backgroundPosition: '1000px 0' },
-        },
-        glow: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(251, 146, 60, 0.5)' },
-          '50%': { boxShadow: '0 0 40px rgba(251, 146, 60, 0.8), 0 0 60px rgba(250, 204, 21, 0.6)' },
-        },
-        glowRed: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(239, 68, 68, 0.6)' },
-          '50%': { boxShadow: '0 0 40px rgba(239, 68, 68, 0.9), 0 0 60px rgba(220, 38, 38, 0.7)' },
         },
       },
     },

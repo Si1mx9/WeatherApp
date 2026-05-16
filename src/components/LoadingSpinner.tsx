@@ -14,13 +14,13 @@ export function LoadingSpinner() {
         transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
         className="mb-6"
       >
-        <Loader2 className="w-16 h-16 text-white" />
+        <Loader2 className="w-16 h-16 text-theme-text" />
       </motion.div>
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="text-lg text-white/80 font-medium"
+        className="text-lg text-theme-secondary font-medium"
       >
         Fetching weather data...
       </motion.p>

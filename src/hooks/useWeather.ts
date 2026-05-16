@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { fetchWeatherData, WeatherApiError } from '../services/weatherApi';
 import type { WeatherData } from '../types/weather';
 
@@ -26,7 +26,6 @@ export function useWeather(initialLocation?: string): UseWeatherReturn {
     try {
       const data = await fetchWeatherData(location);
       setWeatherData(data);
-      setError(null);
     } catch (err) {
       if (err instanceof WeatherApiError) {
         setError(err.message);
@@ -39,12 +38,11 @@ export function useWeather(initialLocation?: string): UseWeatherReturn {
     }
   }, []);
 
-  // Fetch initial location if provided
-  useState(() => {
+  useEffect(() => {
     if (initialLocation) {
       fetchWeather(initialLocation);
     }
-  });
+  }, [initialLocation, fetchWeather]);
 
   return {
     weatherData,
