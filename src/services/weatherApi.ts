@@ -1,7 +1,7 @@
 import type { WeatherApiResponse, WeatherData } from '../types/weather';
 
-const API_KEY = 'NB8HLCFCAVRMZEHBGTBJYWJMR';
-const API_BASE_URL = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline';
+const API_KEY = import.meta.env.VITE_API_KEY;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export class WeatherApiError extends Error {
   public statusCode?: number;
