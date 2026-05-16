@@ -29,12 +29,12 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | TypeScript check + production build |
-| `npm run preview` | Preview production build |
-| `npm run lint` | Run ESLint |
+| Command           | Description                         |
+| ----------------- | ----------------------------------- |
+| `npm run dev`     | Start development server            |
+| `npm run build`   | TypeScript check + production build |
+| `npm run preview` | Preview production build            |
+| `npm run lint`    | Run ESLint                          |
 
 ## Tech Stack
 
@@ -81,10 +81,14 @@ src/
 ## Configuration
 
 ### Theme
+
 The app uses CSS custom properties for theming. Light mode is the default; dark mode is applied via the `.dark` class on `<html>`. The user's preference is persisted in `localStorage` and respects `prefers-color-scheme` on first visit.
 
 ### API
+
 Weather data comes from [Visual Crossing](https://www.visualcrossing.com/weather-api). The API key is bundled with the client — for production, consider moving it behind a proxy server.
+VITE_API_KEY=NB8HLCFCAVRMZEHBGTBJYWJMR
+VITE_API_BASE_URL=https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline
 
 ## Performance Notes
 
